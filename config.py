@@ -4,14 +4,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_ID = int(getenv("API_ID", "21803165"))
-API_HASH = getenv("API_HASH", "05e5e695feb30e25bef47484cc006da7")
-BOT_TOKEN = getenv("BOT_TOKEN", None)
-OWNER_ID = int(getenv("OWNER_ID", "7403621976"))
-MONGO_URL = getenv("MONGO_URL", None)
-SUPPORT_GRP = getenv("SUPPORT_GRP", "Purvi_UPdates")
-UPDATE_CHNL = getenv("UPDATE_CHNL", "PURVI_SUPPORT")
-OWNER_USERNAME = getenv("OWNER_USERNAME", "ll_ALPHA_BABY_lll")
+API_ID = int(getenv("API_ID", "28164938"))
+API_HASH = getenv("API_HASH", "d53fd90b87686f713f6adc9428bbb6bb")
+BOT_TOKEN = getenv("BOT_TOKEN", "7943558810:AAEvJS6_Am-jEGjS-d4Mj8OeOTlw7TdMlp0")
+OWNER_ID = int(getenv("OWNER_ID", "5536473064"))
+MONGO_URL = getenv("MONGO_URL", "mongodb+srv://iamnobita1:nobitamusic1@cluster0.k08op.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+SUPPORT_GRP = getenv("SUPPORT_GRP", "OG_DEFAULTERS_01")
+UPDATE_CHNL = getenv("UPDATE_CHNL", "NOBITA_MUSIC_SUPPORT")
+OWNER_USERNAME = getenv("OWNER_USERNAME", "ll_YOURR_NOBITA_ll")
 
 # Random Start Images
 IMG = [
