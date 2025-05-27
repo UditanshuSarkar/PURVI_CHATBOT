@@ -11,7 +11,7 @@ OWNER_ID = int(getenv("OWNER_ID", "5536473064"))
 MONGO_URL = getenv("MONGO_URL", "mongodb+srv://iamnobita1:nobitamusic1@cluster0.k08op.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 SUPPORT_GRP = getenv("SUPPORT_GRP", "OG_DEFAULTERS_01")
 UPDATE_CHNL = getenv("UPDATE_CHNL", "NOBITA_MUSIC_SUPPORT")
-OWNER_USERNAME = getenv("OWNER_USERNAME", "ll_YOURR_NOBITA_ll")
+OWNER_USERNAME = getenv("OWNER_USERNAME", "ll_NOBITA_DEFAULTERS_ll")
 
 # Random Start Images
 IMG = [
