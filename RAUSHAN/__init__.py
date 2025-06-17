@@ -24,10 +24,7 @@ boot = time.time()
 mongo = MongoCli(config.MONGO_URL)
 db = mongo.Anonymous
 
-
 OWNER = config.OWNER_ID
-# DEVS = config.SUDO_USERS | config.OWNER_ID
-
 
 class AMBOT(Client):
     def __init__(self):
@@ -49,20 +46,30 @@ class AMBOT(Client):
     async def stop(self):
         await super().stop()
 
+# Async helper to safely fetch bot info
+async def init_dev_bot():
+    dev = Client(
+        "Dev",
+        bot_token=config.BOT_TOKEN,
+        api_id=config.API_ID,
+        api_hash=config.API_HASH,
+    )
+    await dev.start()
+    x = await dev.get_me()
+    await dev.stop()
 
-dev = Client(
-    "Dev",
-    bot_token=config.BOT_TOKEN,
-    api_id=config.API_ID,
-    api_hash=config.API_HASH,
-    # plugins=dict(root="RAUSHAN.modules"),
-)
+    return {
+        "BOT_ID": x.id,
+        "BOT_NAME": x.first_name + (x.last_name or ""),
+        "BOT_USERNAME": x.username,
+        "BOT_MENTION": x.mention,
+        "BOT_DC_ID": getattr(x, "dc_id", None)
+    }
 
-dev.start()
+bot_info = asyncio.run(init_dev_bot())
 
-BOT_ID = config.BOT_TOKEN.split(":")[0]
-x = dev.get_me()
-BOT_NAME = x.first_name + (x.last_name or "")
-BOT_USERNAME = x.username
-BOT_MENTION = x.mention
-BOT_DC_ID = x.dc_id
+BOT_ID = bot_info["BOT_ID"]
+BOT_NAME = bot_info["BOT_NAME"]
+BOT_USERNAME = bot_info["BOT_USERNAME"]
+BOT_MENTION = bot_info["BOT_MENTION"]
+BOT_DC_ID = bot_info["BOT_DC_ID"]
